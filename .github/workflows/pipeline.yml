@@ -72,6 +72,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    needs: code-analisys
     steps:
       - uses: actions/checkout@v3
         with:
@@ -119,3 +120,13 @@ jobs:
         shell: bash
         run: |
           echo "Deploy STG"
+
+deploy-Prod:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: prod
+    needs: [build, code-analisys]
+    steps:
+      - name: Deploy 
+        run: echo "Deploy PROD"
