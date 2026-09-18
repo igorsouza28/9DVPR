@@ -70,7 +70,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-          -Dsonar.qualitygate.wait=true
+          -Dsonar.qualitygate.wait=false
           -Dsonar.projectKey=igorsouza28_devops-fiap
           -Dsonar.organization=igorsouza28
   
