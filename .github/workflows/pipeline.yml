@@ -121,7 +121,7 @@ jobs:
         run: |
           echo "Deploy STG"
 
-deploy-Prod:
+  deploy-Prod:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     environment:
